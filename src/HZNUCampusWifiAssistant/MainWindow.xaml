@@ -1,0 +1,206 @@
+﻿<Window x:Class="HZNUCampusWifiAssistant.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="杭州师范大学校园网助手"
+        Width="980"
+        Height="690"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#EEF4FA"
+        FontFamily="SimSun"
+        TextOptions.TextFormattingMode="Display"
+        TextOptions.TextRenderingMode="ClearType"
+        SnapsToDevicePixels="True">
+    <Grid x:Name="RootGrid">
+        <Grid.Background>
+            <SolidColorBrush Color="#EAF1F8" />
+        </Grid.Background>
+
+        <Border HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                Width="710"
+                Height="520"
+                Background="#B2FFFFFF"
+                BorderBrush="#C9D7E6"
+                BorderThickness="1"
+                CornerRadius="24"
+                Padding="32">
+            <Border.Effect>
+                <DropShadowEffect BlurRadius="24" ShadowDepth="0" Color="#220B1A2B" />
+            </Border.Effect>
+
+            <Grid Width="560" HorizontalAlignment="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+                <StackPanel Grid.Row="0">
+                    <TextBlock Text="杭州师范大学校园网助手"
+                               FontSize="28"
+                               FontWeight="Bold"
+                               Foreground="#20395B"
+                               HorizontalAlignment="Center"
+                               TextAlignment="Center" />
+                    <Rectangle Margin="0,14,0,12"
+                               Height="1.5"
+                               Fill="#BACBDE"
+                               RadiusX="1"
+                               RadiusY="1" />
+                </StackPanel>
+
+                <Grid Grid.Row="1" x:Name="SettingsPanel">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <TextBlock Grid.Row="0"
+                               Text="请输入账号信息，并选择是否保存凭据或开机自启"
+                               FontSize="13"
+                               FontWeight="SemiBold"
+                               Foreground="#56677C"
+                               HorizontalAlignment="Center"
+                               TextAlignment="Center" />
+
+                    <Grid Grid.Row="1" Margin="22,34,22,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="88" />
+                            <ColumnDefinition Width="320" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"
+                                   VerticalAlignment="Center"
+                                   Text="学号"
+                                   FontSize="21"
+                                   FontWeight="Bold"
+                                   Foreground="#23354D" />
+                        <TextBox x:Name="StudentIdTextBox"
+                                 Grid.Column="1"
+                                 Height="38"
+                                 FontSize="18"
+                                 Padding="10,10,10,4"
+                                 BorderBrush="#B4C5D9"
+                                 BorderThickness="1.2"
+                                 Background="#FCFEFF" />
+                    </Grid>
+
+                    <Grid Grid.Row="2" Margin="22,22,22,0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="88" />
+                            <ColumnDefinition Width="320" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Grid.Column="0"
+                                   VerticalAlignment="Center"
+                                   Text="密码"
+                                   FontSize="21"
+                                   FontWeight="Bold"
+                                   Foreground="#23354D" />
+                        <PasswordBox x:Name="PasswordBox"
+                                     Grid.Column="1"
+                                     Height="38"
+                                     FontSize="18"
+                                     Padding="10,10,10,4"
+                                     BorderBrush="#B4C5D9"
+                                     BorderThickness="1.2"
+                                     Background="#FCFEFF" />
+                    </Grid>
+
+                    <CheckBox x:Name="RememberCredentialsCheckBox"
+                              Grid.Row="3"
+                              Margin="110,28,0,0"
+                              Content="保存账号密码"
+                              FontSize="16"
+                              FontWeight="Bold"
+                              Foreground="#2F4056" />
+
+                    <CheckBox x:Name="AutoStartCheckBox"
+                              Grid.Row="4"
+                              Margin="110,16,0,0"
+                              Content="开机后自动检测并连接校园网"
+                              FontSize="16"
+                              FontWeight="Bold"
+                              Foreground="#2F4056" />
+
+                    <StackPanel Grid.Row="5" Margin="110,24,0,0">
+                        <TextBlock x:Name="HintTextBlock"
+                                   TextWrapping="Wrap"
+                                   FontSize="12"
+                                   Foreground="#5B6775" />
+                        <TextBlock x:Name="BackgroundHintTextBlock"
+                                   Margin="0,8,0,0"
+                                   TextWrapping="Wrap"
+                                   FontSize="11"
+                                   Foreground="#78828D" />
+                    </StackPanel>
+
+                    <Button x:Name="ConnectButton"
+                            Grid.Row="6"
+                            HorizontalAlignment="Center"
+                            Width="210"
+                            Height="54"
+                            Margin="0,28,0,0"
+                            Content="连接校园网"
+                            FontSize="18"
+                            FontWeight="Bold"
+                            Foreground="White"
+                            Background="#2566B5"
+                            BorderThickness="0" />
+                </Grid>
+
+                <Grid Grid.Row="1" x:Name="StatusPanel" Visibility="Collapsed">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+
+                    <StackPanel>
+                        <TextBlock x:Name="StatusTitleTextBlock"
+                                   Text="校园网认证进度"
+                                   FontSize="22"
+                                   FontWeight="Bold"
+                                   Foreground="#1F3556" />
+                        <TextBlock x:Name="StatusSubtitleTextBlock"
+                                   Margin="0,10,0,0"
+                                   Text="正在实时显示当前执行步骤"
+                                   FontSize="12"
+                                   Foreground="#5F6F84" />
+                    </StackPanel>
+
+                    <TextBox x:Name="StatusTextBox"
+                             Grid.Row="1"
+                             Margin="0,18,0,0"
+                             IsReadOnly="True"
+                             TextWrapping="Wrap"
+                             VerticalScrollBarVisibility="Auto"
+                             HorizontalScrollBarVisibility="Disabled"
+                             Background="#F8FBFF"
+                             BorderBrush="#D7E3F1"
+                             BorderThickness="1"
+                             Padding="12"
+                             FontSize="13" />
+
+                    <Button x:Name="StatusCloseButton"
+                            Grid.Row="2"
+                            Width="150"
+                            Height="44"
+                            Margin="0,20,0,0"
+                            HorizontalAlignment="Right"
+                            Content="关闭窗口"
+                            FontSize="16"
+                            FontWeight="Bold"
+                            Background="#2566B5"
+                            Foreground="White"
+                            BorderThickness="0"
+                            IsEnabled="False" />
+                </Grid>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>

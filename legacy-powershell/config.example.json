@@ -1,0 +1,27 @@
+﻿{
+  "campusSsids": [
+    "HZNU"
+  ],
+  "networkTestUrl": "http://www.msftconnecttest.com/connecttest.txt",
+  "expectedNetworkTestContent": "Microsoft Connect Test",
+  "timeoutSeconds": 8,
+  "credentialFile": "credential.xml",
+  "rememberCredentials": false,
+  "autoStart": false,
+  "credentials": {
+    "studentId": "",
+    "password": ""
+  },
+  "auth": {
+    "baseUrl": "http://172.31.1.30",
+    "portalPageUrl": "http://172.31.1.30/srun_portal_pc?ac_id=17&theme=hznu",
+    "acId": "17",
+    "encVer": "srun_bx1",
+    "n": "200",
+    "type": "1",
+    "doubleStack": "0",
+    "os": "Windows 10",
+    "name": "Windows",
+    "ip": ""
+  }
+}

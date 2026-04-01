@@ -1,0 +1,14 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+    <AssemblyName>HZNUCampusWifiAssistant</AssemblyName>
+    <RootNamespace>HZNUCampusWifiAssistant</RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\main_background.jpg" LogicalName="HZNUCampusWifiAssistant.main_background.jpg" />
+  </ItemGroup>
+</Project>
